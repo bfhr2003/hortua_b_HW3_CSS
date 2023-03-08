@@ -15,7 +15,7 @@ body {
   color: white;
 }
 
-/* main header rules */
+
 header {
     background-color: rgb(34,143,244)ed;
     position: sticky;
@@ -61,7 +61,17 @@ header {
 
 .characters li a { text-decoration: none; }
 
+.red_bumper {
+    width: 100%;
+    height: 6px;
+    background-color: rgb(255, 226, 90);
 
+    transition: height 0.2s ease;
+
+    position: absolute;
+}
+
+.characters li:hover .red_bumper { height: 70px; }
 
 article { padding: 20px; }
 
@@ -81,6 +91,20 @@ article p {
     margin: 0 auto;
 }
 
+.sprite {
+    width: 150px;
+    height: 150px;
+    
+    background-image: url('../img/brawlstarsSprite.png');
+}
+
+#crow { background-position: -150px 0; }
+#leon { background-position: -300px 0; }
+#piper { background-position: -450px 0; }
+#squeak { background-position: -600px 0; }
+#poco { background-position: -750px 0; }
+
+.sprite:hover { background-position-y: -150px !important; }
 
 
 footer {
@@ -99,3 +123,60 @@ footer {
 
 
 
+.lightbox { 
+    width: 100vw; 
+    height: 100vh; 
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgb(255,226,90);
+    background-image: url('../img/spike.png');
+    background-repeat: no-repeat;
+
+    background-size: 55vh; 
+    background-position: 40px bottom;
+
+    z-index: 5000;
+
+    display: none;
+}
+
+#lightbox2 { background-image: url('../img/crow.png'); }
+#lightbox3 { background-image: url('../img/leon.png'); }
+#lightbox4 { background-image: url('../img/piper.png'); }
+#lightbox5 { background-image: url('../img/squeak.png'); }
+#lightbox6 { background-image: url('../img/poco.png'); }
+
+.lightbox_close {
+    position: relative;
+    top: 20px;
+    left: 95%;
+
+    color: red;
+    font-size: 3em;
+
+    text-decoration: none;
+
+    font-weight: bolder;
+}
+
+.lightbox_close:hover { opacity: 0.5; color: red; }
+
+.lightbox article {
+    width: 55%;
+    margin-left: 40%;
+    padding-top: 50px;
+}
+
+.lb_text, .lb_heading { text-align: left; }
+
+.lb_text {
+    line-height: 1.6 !important;
+    margin-left: 0;
+    padding-top: 2em;
+}
+
+
+.lightbox:target { display: block; }
